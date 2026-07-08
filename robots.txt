@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cspm.com.br/sitemap.xml
