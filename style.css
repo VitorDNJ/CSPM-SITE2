@@ -17,8 +17,8 @@
   --color-accent: #1e8e7e;
   --color-accent-dark: #146b5f;
   --color-accent-soft: #e4f3f0;
-  --color-emergency: #c81e3a;
-  --color-emergency-dark: #9c1730;
+  --color-emergency:  #0b08a0;
+  --color-emergency-dark: #a00808;
   --color-emergency-soft: #fdeaec;
   --color-bronze: #b9834e;
   --color-bg: #f7fafa;
@@ -182,8 +182,8 @@ select:focus-visible,
    Cabeçalho / navegação
    ========================================================================= */
 .topbar {
-  background: var(--color-primary-dark);
-  color: #cfe3ea;
+  background: black;
+  color: white-space#cfe3ea;
   font-size: 0.85rem;
 }
 .topbar__inner {
@@ -305,7 +305,7 @@ select:focus-visible,
    ========================================================================= */
 .hero {
   position: relative;
-  background: linear-gradient(160deg, var(--color-primary-dark) 0%, var(--color-primary) 62%, var(--color-primary-light) 100%);
+  background:#473a2b;
   color: #fff;
   overflow: hidden;
 }
@@ -313,7 +313,6 @@ select:focus-visible,
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 82% 18%, rgba(255,255,255,0.10), transparent 42%);
   pointer-events: none;
 }
 .hero__inner {
