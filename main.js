@@ -81,6 +81,61 @@
     });
   }
 
+  /* Carrossel do hero ---------------------------------------------------*/
+  var heroCarousel = document.getElementById("hero-carousel");
+  if (heroCarousel) {
+    var slides = Array.prototype.slice.call(heroCarousel.querySelectorAll(".hero-carousel__slide"));
+    var dotsWrap = heroCarousel.querySelector(".hero-carousel__dots");
+    var prevBtn = heroCarousel.querySelector(".hero-carousel__arrow--prev");
+    var nextBtn = heroCarousel.querySelector(".hero-carousel__arrow--next");
+    var current = slides.findIndex(function (s) { return s.classList.contains("is-active"); });
+    if (current < 0) current = 0;
+    var timer = null;
+
+    if (slides.length <= 1) {
+      heroCarousel.classList.add("hero-carousel--single");
+    } else {
+      slides.forEach(function (_, i) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "hero-carousel__dot" + (i === current ? " is-active" : "");
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", "Ir para imagem " + (i + 1));
+        dot.addEventListener("click", function () { goTo(i, true); });
+        dotsWrap.appendChild(dot);
+      });
+
+      var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll(".hero-carousel__dot"));
+
+      function render() {
+        slides.forEach(function (s, i) { s.classList.toggle("is-active", i === current); });
+        dots.forEach(function (d, i) { d.classList.toggle("is-active", i === current); });
+      }
+
+      function goTo(index, userTriggered) {
+        current = (index + slides.length) % slides.length;
+        render();
+        if (userTriggered) restart();
+      }
+
+      function next() { goTo(current + 1); }
+
+      function restart() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(next, 4000);
+      }
+
+      if (prevBtn) prevBtn.addEventListener("click", function () { goTo(current - 1, true); });
+      if (nextBtn) nextBtn.addEventListener("click", function () { goTo(current + 1, true); });
+
+      heroCarousel.addEventListener("mouseenter", function () { if (timer) clearInterval(timer); });
+      heroCarousel.addEventListener("mouseleave", restart);
+
+      render();
+      restart();
+    }
+  }
+
   /* Ano dinâmico no rodapé ---------------------------------------------*/
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
