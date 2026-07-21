@@ -165,3 +165,9 @@
     }
   }
 })();
+
+
+  const anoFundacao = 1997; // altere para o ano correto
+  const anos = new Date().getFullYear() - anoFundacao;
+
+  document.getElementById('anos').textContent = anos;
