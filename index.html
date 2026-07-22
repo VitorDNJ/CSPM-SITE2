@@ -461,20 +461,28 @@
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
     <div class="vw-plugin-top-wrapper"></div>
-    </div>
-    </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <script>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const anoFundacao = 1997;
+    const anos = new Date().getFullYear() - anoFundacao;
 
-  const anoFundacao = 1997; // ajuste para o ano correto
-  const anos = new Date().getFullYear() - anoFundacao;
+    const hero = document.getElementById('anos');
+    if (hero) {
+        hero.textContent = anos;
+    }
 
-  document.getElementById('anos-historia').textContent = anos + '+';
-    </script>
+    const historia = document.getElementById('anos-historia');
+    if (historia) {
+        historia.textContent = anos + '+';
+    }
+});
+</script>
 
 </body>
 </html>
