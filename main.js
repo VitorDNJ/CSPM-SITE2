@@ -171,3 +171,5 @@
   const anos = new Date().getFullYear() - anoFundacao;
 
   document.getElementById('anos').textContent = anos;
+  
+  
