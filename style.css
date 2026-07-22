@@ -17,8 +17,8 @@
   --color-accent: #1e8e7e;
   --color-accent-dark: #146b5f;
   --color-accent-soft: #e4f3f0;
-  --color-emergency:  #f00505;
-  --color-emergency-dark: #f00505;
+  --color-emergency:  #537c8ddf;
+  --color-emergency-dark: #f41818;
   --color-emergency-soft: #fdeaec;
   --color-bronze: #b9834e;
   --color-bg: #f7fafa;
@@ -857,7 +857,3 @@ th { background: var(--color-surface-alt); font-family: var(--font-mono); font-s
 }
 
 
-.autor {
-    color: #fff;
-    text-decoration: none;
-}
