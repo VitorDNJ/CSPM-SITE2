@@ -855,3 +855,9 @@ th { background: var(--color-surface-alt); font-family: var(--font-mono); font-s
   .timeline__item { opacity: 1; transform: none; transition: none; }
   .timeline__marker { transition: none; }
 }
+
+
+.autor {
+    color: #fff;
+    text-decoration: none;
+}
