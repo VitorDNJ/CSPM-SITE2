@@ -72,7 +72,7 @@
     <div class="contact-grid" style="align-items:center">
       <div>
         <div class="divider-bronze"></div>
-        <h2 style="color: black;">Mais de 27 anos cuidando de Botafogo e da Zona Sul do Rio</h2>
+        <h2 style="color: black;">Mais de <span id="anos"></span> cuidando de Botafogo e da Zona Sul do Rio</h2>
         <p style="color: black;">A Casa de Saúde Pinheiro Machado, localizada em Botafogo, na Zona Sul do Rio de Janeiro, foi fundada em 1997. Desde então, mantém infraestrutura própria para a realização de exames de imagem e análises clínicas, reunindo diagnóstico, tratamento e recuperação em um só endereço.</p>
         <p style="color: black;">O hospital conta com 3 salas de cirurgia, que possibilitam a execução de procedimentos de baixa e média complexidade. Entre os procedimentos cirúrgicos realizados, destacam-se os traumatológicos, urológicos e as cirurgias bariátricas.</p>
       </div>
@@ -215,9 +215,9 @@
 <section class="section section--dark text-center" style=" background-color: #537c8ddf;">
   <div class="container" >
     <h2>Quer conhecer nossa estrutura de perto?</h2>
-    <p>Fale com nossa equipe e tire suas dúvidas sobre atendimento, exames e internação.</p>
+    <p ba>Fale com nossa equipe e tire suas dúvidas sobre atendimento, exames e internação.</p>
     <div class="hero__ctas" style="justify-content:center">
-      <a class="btn btn-primary" href="contato.html">Fale com Nossa Equipe</a>
+      <a class="btn btn-primary" href="contato.html" style="background-color: blue;">Fale com Nossa Equipe</a>
       <a class="btn btn-secondary" href="servicos.html">Ver Especialidades</a>
     </div>
   </div>
@@ -302,7 +302,25 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
+
     </script>
+
+     <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const anoFundacao = 1997;
+    const anos = new Date().getFullYear() - anoFundacao;
+
+    const hero = document.getElementById('anos');
+    if (hero) {
+        hero.textContent = anos;
+    }
+
+    const historia = document.getElementById('anos-historia');
+    if (historia) {
+        historia.textContent = anos + '+';
+    }
+});
+</script>
 
 </body>
 </html>
